@@ -90,6 +90,20 @@ If you want to validate with your own datasets, you need to provide labels.
 python demo_folder.py --demo-folder YOUR_FOLDER --save-folder YOUR_SAVE_FOLDER --demo-label-folder YOUR_LABEL_FOLDER
 ```
 
+## Docker
+
+Build docker image.
+
+```
+docker build -t cylinder3d:latest .
+```
+
+Run on repository.
+
+```
+docker run -it --rm --net=host --volume=$(pwd):/notebooks:rw --privileged --ipc=host --gpus all cylinder3d:latest bash
+```
+
 ## TODO List
 - [x] Release pretrained model for nuScenes.
 - [x] Support multiscan semantic segmentation.
